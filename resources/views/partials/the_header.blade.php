@@ -8,8 +8,15 @@
     'text' => 'Comics',
     'index' => 'comics.index',
 ],
+// [
+//     'text' => 'Dettagli',
+//     'index' => 'details.index',
+// ],
     ]
 @endphp
+<header>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light border">
     <div class="container-fluid">
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
@@ -27,4 +34,8 @@
     </div>
 </nav>
 
- 
+<div class="container-fluid">
+    <img src="{{asset('images/jumbotron.jpg')}}" class="jumbotron">
+</div>
+
+</header>

@@ -8,11 +8,11 @@
     <title>@yield('titolo_pagina')</title>
 </head>
 <body>
-    <header>
-        @include('partials.links_navbar')
-    </header>
+    {{-- Header --}}
+        @include('partials.the_header')
+
     <main class="main">
-        @include('partials.jumbotron')
+        {{-- @include('partials.jumbotron') --}}
         @yield('content')
     </main>
     {{-- footer --}}

@@ -14,11 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $comics_database = config('db-comics');
-    // dump($comics_database);
-    return view('home.index', ['lista_comics' => $comics_database]);
+    return view('home.index');
 })->name('home.index');
 
 Route::get('/comics', function () {
-    return view('comics.index');
+    $comics_database = config('db-comics');
+    $data = [];
+    foreach ($comics_database as $index => $comic) {
+        $comic['id'] = $index;
+        $data[] = $comic;
+    }
+    return view('comics.index', [
+        'comics' => $comics_database
+    ]);
 })->name("comics.index");
+
+Route::get('/comics/{id?}', function ($id) {
+    $data = config('db-comics');
+    if ($id >= 0 && $id < count($data)) {
+        $comic = $data[$id];
+        return view('comics.details', [
+            'comic' => $comic
+        ]);
+    } else {
+        abort('404');
+    }
+})->name('comics.details');

@@ -1,4 +1,4 @@
-.main .jumbotron {
+header .jumbotron {
   height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -7,11 +7,11 @@
   width: 100%;
 }
 
-.footer {
-  height: 100px;
-}
-
-.footer .bg-prova {
-  background-color: red;
+main .my-img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 
